@@ -154,6 +154,7 @@ Extend the platform to any additional port or application without writing code. 
 ### Deploy VM A (Source Host)
 
 ```bash
+git clone https://github.com/HashimsGitHub/AzureSphere.git
 cd AzureSphere
 chmod +x start-vma.sh
 ./start-vma.sh
@@ -164,6 +165,7 @@ Open `https://[VM-A-IP]`
 ### Deploy VM B (Destination Host)
 
 ```bash
+git clone https://github.com/HashimsGitHub/AzureSphere.git
 cd AzureSphere/simulator
 chmod +x start-vmb.sh
 ./start-vmb.sh
@@ -175,6 +177,19 @@ Both scripts are fully automated — dependencies, Docker, SSL certificates, and
 
 **Fedora support:** the scripts detect `dnf`, install Docker Engine + the Compose plugin, configure `firewalld`, and use SELinux-safe container mounts. Ubuntu/Debian (`apt`) remains supported.
 
+```bash
+git clone -b AzureLinux4.0 --single-branch https://github.com/HashimsGitHub/AzureSphere.git AzureSphere
+cd AzureSphere
+chmod +x start-vma.sh
+./start-vma.sh
+```
+
+```bash
+git clone -b AzureLinux4.0 --single-branch https://github.com/HashimsGitHub/AzureSphere.git AzureSphere
+cd AzureSphere/simulator
+chmod +x start-vmb.sh
+./start-vmb.sh
+```
 ---
 
 ## Prerequisites
